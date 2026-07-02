@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Target, Eye, Heart, Award } from "lucide-react";
 import { Reveal, Counter, SectionHeading } from "@/components/motion";
 import { heroStats } from "@/lib/data";
-import quarry from "@/assets/factory-quarry.jpg";
+import quarry from "@/assets/factory-quarry.webp";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

@@ -5,7 +5,7 @@ import { useRef } from "react";
 import {
   Globe, Award, Cog, Tag, Zap, Headphones, ArrowRight, MapPin,
 } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
+import heroImg from "@/assets/hero.webp";
 import { Reveal, Counter, SectionHeading } from "@/components/motion";
 import { Collection } from "@/components/Collection";
 import { SlabShowcase } from "@/components/SlabShowcase";

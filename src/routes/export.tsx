@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { Ship, Package, Boxes, FileCheck, ClipboardList, Search } from "lucide-react";
 import { Reveal, SectionHeading } from "@/components/motion";
 import { exportCountries } from "@/lib/data";
-import shipping from "@/assets/export-shipping.jpg";
+import shipping from "@/assets/export-shipping.webp";
 
 export const Route = createFileRoute("/export")({
   head: () => ({

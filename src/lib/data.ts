@@ -1,13 +1,13 @@
-import marble from "@/assets/slab-marble.jpg";
-import granite from "@/assets/slab-granite.jpg";
-import onyx from "@/assets/slab-onyx.jpg";
-import limestone from "@/assets/slab-limestone.jpg";
-import lobby from "@/assets/app-lobby.jpg";
-import kitchen from "@/assets/app-kitchen.jpg";
-import bathroom from "@/assets/app-bathroom.jpg";
-import quarry from "@/assets/factory-quarry.jpg";
-import line from "@/assets/factory-line.jpg";
-import shipping from "@/assets/export-shipping.jpg";
+import marble from "@/assets/slab-marble.webp";
+import granite from "@/assets/slab-granite.webp";
+import onyx from "@/assets/slab-onyx.webp";
+import limestone from "@/assets/slab-limestone.webp";
+import lobby from "@/assets/app-lobby.webp";
+import kitchen from "@/assets/app-kitchen.webp";
+import bathroom from "@/assets/app-bathroom.webp";
+import quarry from "@/assets/factory-quarry.webp";
+import line from "@/assets/factory-line.webp";
+import shipping from "@/assets/export-shipping.webp";
 
 export type Category = "marble" | "granite" | "limestone" | "onyx";
 

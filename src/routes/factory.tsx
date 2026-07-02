@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { Play } from "lucide-react";
 import { Reveal, SectionHeading } from "@/components/motion";
-import line from "@/assets/factory-line.jpg";
-import quarry from "@/assets/factory-quarry.jpg";
+import line from "@/assets/factory-line.webp";
+import quarry from "@/assets/factory-quarry.webp";
 
 export const Route = createFileRoute("/factory")({
   head: () => ({
