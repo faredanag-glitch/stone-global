@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 import {
   Globe, Award, Cog, Tag, Zap, Headphones, ArrowRight, MapPin,
@@ -31,9 +31,10 @@ const whyIcons = [Award, Globe, Cog, Tag, Zap, Headphones];
 function Home() {
   const { t } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "30%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, reduce ? 1 : 0]);
 
   return (
     <>

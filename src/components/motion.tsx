@@ -1,4 +1,4 @@
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import { motion, useInView, useMotionValue, useSpring, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, type ReactNode } from "react";
 
 export function Reveal({
@@ -27,6 +27,7 @@ export function Reveal({
 
 export function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
+  const reduce = useReducedMotion();
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const mv = useMotionValue(0);
   const spring = useSpring(mv, { duration: 1800, bounce: 0 });
@@ -36,12 +37,17 @@ export function Counter({ value, suffix = "" }: { value: number; suffix?: string
   }, [inView, value, mv]);
 
   useEffect(() => {
+    if (reduce) {
+      if (ref.current) ref.current.textContent = value.toLocaleString() + suffix;
+      return;
+    }
     return spring.on("change", (v) => {
       if (ref.current) {
         ref.current.textContent = Math.round(v).toLocaleString() + suffix;
       }
     });
-  }, [spring, suffix]);
+  }, [spring, suffix, reduce, value]);
+
 
   return <span ref={ref}>0{suffix}</span>;
 }

@@ -15,6 +15,7 @@ import { AppProvider } from "../lib/providers";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { Toaster } from "sonner";
+import { MotionConfig } from "framer-motion";
 
 function NotFoundComponent() {
   return (
@@ -128,15 +129,17 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <AppProvider>
-        <Header />
-        <main className="min-h-screen">
-          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-          <Outlet />
-        </main>
-        <Footer />
-        <Toaster position="top-center" richColors />
-      </AppProvider>
+      <MotionConfig reducedMotion="user">
+        <AppProvider>
+          <Header />
+          <main className="min-h-screen">
+            {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+            <Outlet />
+          </main>
+          <Footer />
+          <Toaster position="top-center" richColors />
+        </AppProvider>
+      </MotionConfig>
     </QueryClientProvider>
   );
 }
