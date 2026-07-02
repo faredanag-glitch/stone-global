@@ -31,7 +31,7 @@ function ExportPage() {
   return (
     <div className="pb-24">
       <section className="relative flex h-[60vh] min-h-[420px] items-center justify-center overflow-hidden">
-        <img src={shipping} alt="Marble export shipping" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={shipping} alt="Marble export shipping" fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-black/60" />
         <div className="container-luxe relative z-10 text-center text-white">
           <h1 className="font-display text-4xl font-semibold md:text-6xl">{t("exportPage.title")}</h1>
