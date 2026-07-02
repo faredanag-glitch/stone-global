@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Target, Eye, Heart, Award } from "lucide-react";
 import { Reveal, Counter, SectionHeading } from "@/components/motion";
 import { heroStats } from "@/lib/data";
-import quarry from "@/assets/factory-quarry.jpg";
+import quarry from "@/assets/factory-quarry.webp";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -23,7 +23,7 @@ function About() {
   return (
     <div className="pb-24">
       <section className="relative flex h-[55vh] min-h-[380px] items-center justify-center overflow-hidden">
-        <img src={quarry} alt="Egyptian marble quarry" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={quarry} alt="Egyptian marble quarry" fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-black/60" />
         <div className="container-luxe relative z-10 text-center text-white">
           <h1 className="font-display text-4xl font-semibold md:text-6xl">{t("about.title")}</h1>

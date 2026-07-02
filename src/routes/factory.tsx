@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { Play } from "lucide-react";
 import { Reveal, SectionHeading } from "@/components/motion";
-import line from "@/assets/factory-line.jpg";
-import quarry from "@/assets/factory-quarry.jpg";
+import line from "@/assets/factory-line.webp";
+import quarry from "@/assets/factory-quarry.webp";
 
 export const Route = createFileRoute("/factory")({
   head: () => ({
@@ -22,7 +22,7 @@ function Factory() {
   return (
     <div className="pb-24">
       <section className="relative flex h-[60vh] min-h-[420px] items-center justify-center overflow-hidden">
-        <img src={line} alt="Marble factory production line" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={line} alt="Marble factory production line" fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-black/60" />
         <div className="container-luxe relative z-10 text-center text-white">
           <h1 className="font-display text-4xl font-semibold md:text-6xl">{t("factoryPage.title")}</h1>
@@ -52,7 +52,7 @@ function Factory() {
           <SectionHeading title={t("factoryPage.video")} />
           <Reveal className="mt-12">
             <div className="group relative aspect-video overflow-hidden rounded-2xl border border-border">
-              <img src={quarry} alt={t("factoryPage.watch")} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={quarry} alt={t("factoryPage.watch")} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 flex items-center justify-center bg-black/40">
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gold/90 transition-transform group-hover:scale-110">
                   <Play className="h-8 w-8 text-primary-foreground" />

@@ -5,7 +5,7 @@ import { useRef } from "react";
 import {
   Globe, Award, Cog, Tag, Zap, Headphones, ArrowRight, MapPin,
 } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
+import heroImg from "@/assets/hero.webp";
 import { Reveal, Counter, SectionHeading } from "@/components/motion";
 import { Collection } from "@/components/Collection";
 import { SlabShowcase } from "@/components/SlabShowcase";
@@ -18,6 +18,9 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Nile Stone — Egyptian Marble & Granite Crafted For The World" },
       { name: "description", content: "Premium Egyptian marble & granite manufacturer and exporter. Slabs, projects and worldwide export for luxury developments." },
+    ],
+    links: [
+      { rel: "preload", as: "image", href: heroImg, fetchpriority: "high" },
     ],
   }),
   component: Home,
@@ -39,6 +42,8 @@ function Home() {
         <motion.img
           src={heroImg}
           alt="Egyptian marble quarry and factory"
+          fetchPriority="high"
+          decoding="async"
           style={{ y }}
           className="absolute inset-0 h-[120%] w-full object-cover"
         />
