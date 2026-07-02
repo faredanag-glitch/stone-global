@@ -39,6 +39,8 @@ function Home() {
         <motion.img
           src={heroImg}
           alt="Egyptian marble quarry and factory"
+          fetchPriority="high"
+          decoding="async"
           style={{ y }}
           className="absolute inset-0 h-[120%] w-full object-cover"
         />
