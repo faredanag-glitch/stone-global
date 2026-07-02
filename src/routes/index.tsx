@@ -19,6 +19,9 @@ export const Route = createFileRoute("/")({
       { title: "Nile Stone — Egyptian Marble & Granite Crafted For The World" },
       { name: "description", content: "Premium Egyptian marble & granite manufacturer and exporter. Slabs, projects and worldwide export for luxury developments." },
     ],
+    links: [
+      { rel: "preload", as: "image", href: heroImg, fetchpriority: "high" },
+    ],
   }),
   component: Home,
 });
